@@ -24,7 +24,7 @@ export class Pet_Sitter extends BaseEntity{
     Password : string;
 
     @Column()
-    Phone : number;
+    Phone : string;
 
     @OneToMany(() => Messages, (Messages) => Messages.Pet_Sitter,{
         eager : true

@@ -1,0 +1,38 @@
+@hostname = 127.0.0.1
+@port = 3000
+@serverUrl = http://{{hostname}}:{{port}}
+@baseUrl = http://{{hostname}}:{{port}}
+
+###
+
+GET {{baseUrl}}/
+###
+
+
+// CreateUser
+Post {{baseUrl}}/hotel/createUser
+Content-Type: application/json
+
+{
+    "Firstname" : "Kaseamsan",
+    "Lastname" : "Keawjeen",
+    "Username" : "Kasaje",
+    "Email" : "Kasaje@gmail.com",
+    "Password" : "University_Of_Phayao_65",
+    "Phone" : "0987654321"
+}
+
+###
+
+// CreatePet_Sitter
+POST  {{baseUrl}}/hotel/createPet_Sitter
+Content-Type: application/json
+
+{
+    "Firstname" : "Namikaze ",
+    "Lastname" : "Minato",
+    "Username" : "Minato",
+    "Email" : "Minato@gmail.com",
+    "Password" : "ThisisPassword123_Minato",
+    "Phone" : "0123456789"
+}

@@ -25,7 +25,7 @@ export class User extends BaseEntity {
     Password : string;
 
     @Column()
-    Phone : number;
+    Phone : string;
 
     @OneToMany(() => Pet, (pet) => pet.User, {
         eager : true
