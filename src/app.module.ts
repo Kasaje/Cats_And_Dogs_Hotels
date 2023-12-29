@@ -12,6 +12,7 @@ import { Pet } from './hotel/entities/pet.entities';
 import { Messages } from './hotel/entities/messages.entities';
 import { Pet_Sitter } from './hotel/entities/pet_sitter.entities';
 import { Activity } from './hotel/entities/activity.entities';
+import { Admin } from './hotel/entities/admin.entities';
 
 @Module({
   imports: [ 
@@ -22,7 +23,7 @@ import { Activity } from './hotel/entities/activity.entities';
         let option : TypeOrmModuleOptions = {
           type : 'sqlite',
           database : configService.get<string>('DATABASE_NAME','database.db'),
-          entities : [User, Pet, Pet_Sitter, Messages, Activity],
+          entities : [User, Pet, Pet_Sitter, Messages, Activity, Admin],
           synchronize : true
         }
         return option;
@@ -30,7 +31,7 @@ import { Activity } from './hotel/entities/activity.entities';
       inject : [ ConfigService ]
     }),
 
-    TypeOrmModule.forFeature([ User, Pet, Pet_Sitter, Messages, Activity ])
+    TypeOrmModule.forFeature([ User, Pet, Pet_Sitter, Messages, Activity, Admin ])
 
   ],
   controllers: [AppController, HotelController],
